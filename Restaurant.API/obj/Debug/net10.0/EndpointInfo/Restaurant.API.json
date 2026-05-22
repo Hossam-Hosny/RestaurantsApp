@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Restaurants": {
+    "/api/Restaurants/get-all": {
       "get": {
         "tags": [
           "Restaurants"
@@ -17,8 +17,31 @@
         }
       }
     },
-    "/{id}": {
+    "/api/Restaurants/get-restaurant/{id}": {
       "get": {
+        "tags": [
+          "Restaurants"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Restaurants/delete-restaurant/{id}": {
+      "delete": {
         "tags": [
           "Restaurants"
         ],

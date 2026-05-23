@@ -56,5 +56,26 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.API.Controllers.RestaurantsController",
+    "Method": "UpdateRestaurant",
+    "RelativePath": "api/Restaurants/update/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Restaurant.Application.Restaurants.Commands.UpdateRestaurant.UpdateRestaurantCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

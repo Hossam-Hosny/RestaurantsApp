@@ -32,4 +32,10 @@ internal class RestaurantsRepository(AppDbContext _dbContext) : IRestaurantsRepo
         var restaurant = await _dbContext.Restaurants.Include(r=>r.Dishes).FirstOrDefaultAsync(r=>r.Id== id);
         return restaurant;
     }
+
+    public async Task UpdateAsync(Domain.Entities.Restaurant entity)
+    {
+        _dbContext.Update(entity);
+        await _dbContext.SaveChangesAsync();
+    }
 }

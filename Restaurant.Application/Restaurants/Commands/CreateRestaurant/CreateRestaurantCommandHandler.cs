@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using Restaurant.Application.Restaurants.Dtos;
 using Restaurant.Domain.Repositories;
 
 namespace Restaurant.Application.Restaurants.Commands.CreateRestaurant;
@@ -10,7 +9,7 @@ public class CreateRestaurantCommandHandler(IRestaurantsRepository _restaurantRe
 {
     public async Task<int> Handle(CreateRestaurantCommand request, CancellationToken cancellationToken)
     {
-        _logger.LogInformation("Creating a new Restaurant ");
+        _logger.LogInformation("Creating a new Restaurant {@Restaurant}",request);
         var restaurant = _mapper.Map<Domain.Entities.Restaurant>(request);
 
         int id = await _restaurantRepository.CreateAysnc(restaurant);

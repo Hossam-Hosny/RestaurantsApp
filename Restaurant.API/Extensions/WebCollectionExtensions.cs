@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using Restaurant.API.Middlewares;
+using Serilog;
 
 namespace Restaurant.API.Extensions;
 
@@ -9,7 +10,7 @@ public static class WebCollectionExtensions
         builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 
-
+        builder.Services.AddScoped<ErrorHandlingMiddleware>();
 
 
     }

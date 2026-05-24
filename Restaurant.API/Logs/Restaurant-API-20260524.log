@@ -65,3 +65,46 @@ FROM (
 LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
 ORDER BY [r0].[Id]
 2026-05-24 13:43:34.274 +03:00 [INF] HTTP GET /api/Restaurants/get-restaurant/7 responded 200 in 379.7761 ms
+2026-05-24 15:16:45.667 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-24 15:16:45.782 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-24 15:16:45.796 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-24 15:16:47.292 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-24 15:16:47.692 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-24 15:16:49.862 +03:00 [INF] HTTP GET / responded 404 in 28.9873 ms
+2026-05-24 15:16:57.137 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 87.2890 ms
+2026-05-24 15:16:57.205 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.8181 ms
+2026-05-24 15:16:57.229 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 33.5509 ms
+2026-05-24 15:16:57.229 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 27.8673 ms
+2026-05-24 15:16:57.229 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 29.8500 ms
+2026-05-24 15:16:57.231 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 33.4928 ms
+2026-05-24 15:16:57.447 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 15.9024 ms
+2026-05-24 15:16:57.851 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 0.2527 ms
+2026-05-24 15:16:57.851 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.6018 ms
+2026-05-24 15:16:57.851 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 0.5777 ms
+2026-05-24 15:18:28.225 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-24 15:18:28.305 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-24 15:18:28.322 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-24 15:18:28.798 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-24 15:18:29.202 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-24 15:18:30.906 +03:00 [INF] HTTP GET / responded 404 in 20.6411 ms
+2026-05-24 15:18:34.219 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 74.0447 ms
+2026-05-24 15:18:34.252 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 7.8033 ms
+2026-05-24 15:18:34.252 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 7.8039 ms
+2026-05-24 15:18:34.256 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 11.4441 ms
+2026-05-24 15:18:34.310 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 13.7495 ms
+2026-05-24 15:18:34.310 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.4823 ms
+2026-05-24 15:18:34.503 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 19.2997 ms

@@ -841,3 +841,4 @@ C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Serilog.Sinks.Console.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Serilog.Sinks.File.dll
+C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\obj\Debug\net10.0\Restaurant.API.sourcelink.json

@@ -14,6 +14,8 @@ internal class DishRepository(AppDbContext _dbcontext) : IDishRepository
         return entity.Id;
     }
 
+ 
+
     public async Task<Dish?> GetByNameAsync(string name)
     {
       return  await _dbcontext.Dishes.FirstOrDefaultAsync(dish=>dish.Name == name);

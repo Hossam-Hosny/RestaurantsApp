@@ -1,0 +1,136 @@
+2026-05-25 16:01:11.497 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-25 16:01:11.666 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-25 16:01:11.712 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-25 16:01:14.363 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-25 16:01:14.945 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-25 16:01:19.050 +03:00 [INF] HTTP GET / responded 404 in 54.6896 ms
+2026-05-25 16:01:25.318 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 145.9497 ms
+2026-05-25 16:01:25.377 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 13.7491 ms
+2026-05-25 16:01:25.377 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 13.7184 ms
+2026-05-25 16:01:25.393 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 29.2562 ms
+2026-05-25 16:01:25.474 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.9799 ms
+2026-05-25 16:01:25.474 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 29.9210 ms
+2026-05-25 16:01:25.883 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 39.2106 ms
+2026-05-25 16:01:34.810 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-25 16:01:35.128 +03:00 [INF] getting restaurant of id:100
+2026-05-25 16:01:35.726 +03:00 [INF] Executed DbCommand (66ms) [Parameters=[@id='100'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[Category], [r0].[ContactEmail], [r0].[ContactNumber], [r0].[Description], [r0].[HasDelivery], [r0].[Name], [r0].[Address_City], [r0].[Address_PostalCode], [r0].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @id
+) AS [r0]
+LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
+ORDER BY [r0].[Id]
+2026-05-25 16:01:54.807 +03:00 [ERR] HTTP GET /api/Restaurants/get-restaurant/100 responded 500 in 20079.0200 ms
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with Id: 100 does not exist
+   at Restaurant.Application.Restaurants.Queries.GetRestaurantById.GetRestaurantByIdQueryHandler.Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Restaurants\Queries\GetRestaurantById\GetRestaurantByIdQueryHandler.cs:line 16
+   at Restaurant.API.Controllers.RestaurantsController.GetRestaurantById(Int32 id) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\RestaurantsController.cs:line 26
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-25 16:01:54.914 +03:00 [ERR] Restaurant with Id: 100 does not exist
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with Id: 100 does not exist
+   at Restaurant.Application.Restaurants.Queries.GetRestaurantById.GetRestaurantByIdQueryHandler.Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Restaurants\Queries\GetRestaurantById\GetRestaurantByIdQueryHandler.cs:line 16
+   at Restaurant.API.Controllers.RestaurantsController.GetRestaurantById(Int32 id) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\RestaurantsController.cs:line 26
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurant.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+2026-05-25 16:06:24.627 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-25 16:06:24.755 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-25 16:06:24.772 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-25 16:06:25.509 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-25 16:06:26.125 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-25 16:06:28.519 +03:00 [INF] HTTP GET / responded 404 in 28.8724 ms
+2026-05-25 16:06:33.354 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 105.8268 ms
+2026-05-25 16:06:33.402 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 13.5478 ms
+2026-05-25 16:06:33.402 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 13.5018 ms
+2026-05-25 16:06:33.408 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 19.1954 ms
+2026-05-25 16:06:33.520 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.8498 ms
+2026-05-25 16:06:33.521 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 28.9072 ms
+2026-05-25 16:06:33.736 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 28.5800 ms
+2026-05-25 16:06:41.708 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-25 16:06:41.929 +03:00 [INF] getting restaurant of id:122
+2026-05-25 16:06:42.360 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@id='122'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[Category], [r0].[ContactEmail], [r0].[ContactNumber], [r0].[Description], [r0].[HasDelivery], [r0].[Name], [r0].[Address_City], [r0].[Address_PostalCode], [r0].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @id
+) AS [r0]
+LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
+ORDER BY [r0].[Id]
+2026-05-25 16:06:46.033 +03:00 [ERR] HTTP GET /api/Restaurants/get-restaurant/122 responded 500 in 4369.4924 ms
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with id: 122 does not exist!
+   at Restaurant.Application.Restaurants.Queries.GetRestaurantById.GetRestaurantByIdQueryHandler.Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Restaurants\Queries\GetRestaurantById\GetRestaurantByIdQueryHandler.cs:line 16
+   at Restaurant.API.Controllers.RestaurantsController.GetRestaurantById(Int32 id) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\RestaurantsController.cs:line 26
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-25 16:06:46.149 +03:00 [ERR] Restaurant with id: 122 does not exist!
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with id: 122 does not exist!
+   at Restaurant.Application.Restaurants.Queries.GetRestaurantById.GetRestaurantByIdQueryHandler.Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Restaurants\Queries\GetRestaurantById\GetRestaurantByIdQueryHandler.cs:line 16
+   at Restaurant.API.Controllers.RestaurantsController.GetRestaurantById(Int32 id) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\RestaurantsController.cs:line 26
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurant.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\ErrorHandlingMiddleware.cs:line 11

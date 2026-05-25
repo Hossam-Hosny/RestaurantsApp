@@ -26,6 +26,7 @@ var seeder =scope.ServiceProvider.GetService<IRestaurantSeeder>();
 await seeder.Seed();
 
 app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<RequestTimeLoggingMiddleware>();
 
 // Configure the HTTP request pipeline.
 app.UseSerilogRequestLogging();

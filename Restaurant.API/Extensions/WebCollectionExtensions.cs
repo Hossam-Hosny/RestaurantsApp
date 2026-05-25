@@ -11,6 +11,7 @@ public static class WebCollectionExtensions
     configuration.ReadFrom.Configuration(context.Configuration));
 
         builder.Services.AddScoped<ErrorHandlingMiddleware>();
+        builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
 
 
     }

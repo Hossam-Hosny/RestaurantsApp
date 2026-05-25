@@ -134,3 +134,32 @@ Restaurant.Domain.Exceptions.NotFoundException: Restaurant with id: 122 does not
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
    at Restaurant.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+2026-05-25 16:46:11.891 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-25 16:46:12.060 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-25 16:46:12.086 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-25 16:46:14.228 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-25 16:46:14.720 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-25 16:46:17.710 +03:00 [INF] HTTP GET / responded 404 in 48.6242 ms
+2026-05-25 16:46:36.530 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 135.9360 ms
+2026-05-25 16:46:36.575 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 8.8787 ms
+2026-05-25 16:46:36.575 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 8.8596 ms
+2026-05-25 16:46:36.579 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 12.8704 ms
+2026-05-25 16:46:36.641 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 21.8972 ms
+2026-05-25 16:46:36.641 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.6199 ms
+2026-05-25 16:46:36.911 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 33.9934 ms
+2026-05-25 16:47:02.098 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-25 16:47:21.123 +03:00 [INF] Getting All restaurants
+2026-05-25 16:47:21.461 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]
+2026-05-25 16:47:21.662 +03:00 [INF] HTTP GET /api/Restaurants/get-all responded 200 in 19615.6863 ms
+2026-05-25 16:47:21.670 +03:00 [INF] Request [GET] at /api/Restaurants/get-all took 19621 ms

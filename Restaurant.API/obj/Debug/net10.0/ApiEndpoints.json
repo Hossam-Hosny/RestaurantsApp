@@ -56,6 +56,37 @@
     ]
   },
   {
+    "ContainingType": "Restaurant.API.Controllers.DishesController",
+    "Method": "GetByIdForRestaurant",
+    "RelativePath": "api/restaurants/{restaurantId}/Dishes/{dishId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dishId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Restaurant.Application.Dishes.Dtos.DishDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Restaurant.API.Controllers.RestaurantsController",
     "Method": "CreateRestaurant",
     "RelativePath": "api/Restaurants/create",

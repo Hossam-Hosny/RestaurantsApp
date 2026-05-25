@@ -619,3 +619,135 @@ FROM (
 LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
 ORDER BY [r0].[Id]
 2026-05-25 19:00:28.814 +03:00 [INF] HTTP GET /api/restaurants/7/Dishes responded 200 in 414.4905 ms
+2026-05-25 19:21:53.696 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-25 19:21:53.854 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-25 19:21:53.882 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-25 19:21:55.911 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-25 19:21:56.470 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-25 19:21:59.424 +03:00 [INF] HTTP GET / responded 404 in 28.6410 ms
+2026-05-25 19:22:03.623 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 142.1303 ms
+2026-05-25 19:22:03.671 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 11.6360 ms
+2026-05-25 19:22:03.671 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 11.6304 ms
+2026-05-25 19:22:03.677 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 17.1925 ms
+2026-05-25 19:22:03.758 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.7284 ms
+2026-05-25 19:22:03.758 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 23.3910 ms
+2026-05-25 19:22:04.157 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 36.0990 ms
+2026-05-25 19:23:35.478 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-25 19:23:35.702 +03:00 [INF] Retriving Dish  of Id: 5 in restaurant 7
+2026-05-25 19:23:36.206 +03:00 [INF] Executed DbCommand (70ms) [Parameters=[@id='7'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[Category], [r0].[ContactEmail], [r0].[ContactNumber], [r0].[Description], [r0].[HasDelivery], [r0].[Name], [r0].[Address_City], [r0].[Address_PostalCode], [r0].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @id
+) AS [r0]
+LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
+ORDER BY [r0].[Id]
+2026-05-25 19:23:36.518 +03:00 [INF] HTTP GET /api/restaurants/7/Dishes/5 responded 200 in 1119.8995 ms
+2026-05-25 19:23:44.155 +03:00 [INF] Retriving Dish  of Id: 55 in restaurant 7
+2026-05-25 19:23:44.275 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@id='7'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[Category], [r0].[ContactEmail], [r0].[ContactNumber], [r0].[Description], [r0].[HasDelivery], [r0].[Name], [r0].[Address_City], [r0].[Address_PostalCode], [r0].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @id
+) AS [r0]
+LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
+ORDER BY [r0].[Id]
+2026-05-25 19:23:47.319 +03:00 [ERR] HTTP GET /api/restaurants/7/Dishes/55 responded 500 in 3169.3909 ms
+Restaurant.Domain.Exceptions.NotFoundException: Dish with id: 55 does not exist!
+   at Restaurant.Application.Dishes.Queries.GetDisheByIdForRestaurant.GetDisheByIdForRestaurantQueryHandler.Handle(GetDisheByIdForRestaurantQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Dishes\Queries\GetDisheByIdForRestaurant\GetDisheByIdForRestaurantQueryHandler.cs:line 23
+   at Restaurant.API.Controllers.DishesController.GetByIdForRestaurant(Int32 restaurantId, Int32 dishId) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\DishesController.cs:line 35
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-25 19:23:47.614 +03:00 [ERR] Dish with id: 55 does not exist!
+Restaurant.Domain.Exceptions.NotFoundException: Dish with id: 55 does not exist!
+   at Restaurant.Application.Dishes.Queries.GetDisheByIdForRestaurant.GetDisheByIdForRestaurantQueryHandler.Handle(GetDisheByIdForRestaurantQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Dishes\Queries\GetDisheByIdForRestaurant\GetDisheByIdForRestaurantQueryHandler.cs:line 23
+   at Restaurant.API.Controllers.DishesController.GetByIdForRestaurant(Int32 restaurantId, Int32 dishId) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\DishesController.cs:line 35
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurant.API.Middlewares.RequestTimeLoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\RequestTimeLoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurant.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+2026-05-25 19:24:19.227 +03:00 [INF] Retriving Dish  of Id: 55 in restaurant 74
+2026-05-25 19:24:19.242 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@id='74'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[Category], [r0].[ContactEmail], [r0].[ContactNumber], [r0].[Description], [r0].[HasDelivery], [r0].[Name], [r0].[Address_City], [r0].[Address_PostalCode], [r0].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @id
+) AS [r0]
+LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
+ORDER BY [r0].[Id]
+2026-05-25 19:24:21.711 +03:00 [ERR] HTTP GET /api/restaurants/74/Dishes/55 responded 500 in 2514.4835 ms
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with id: 74 does not exist!
+   at Restaurant.Application.Dishes.Queries.GetDisheByIdForRestaurant.GetDisheByIdForRestaurantQueryHandler.Handle(GetDisheByIdForRestaurantQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Dishes\Queries\GetDisheByIdForRestaurant\GetDisheByIdForRestaurantQueryHandler.cs:line 20
+   at Restaurant.API.Controllers.DishesController.GetByIdForRestaurant(Int32 restaurantId, Int32 dishId) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\DishesController.cs:line 35
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-25 19:24:21.981 +03:00 [ERR] Restaurant with id: 74 does not exist!
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with id: 74 does not exist!
+   at Restaurant.Application.Dishes.Queries.GetDisheByIdForRestaurant.GetDisheByIdForRestaurantQueryHandler.Handle(GetDisheByIdForRestaurantQuery request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Dishes\Queries\GetDisheByIdForRestaurant\GetDisheByIdForRestaurantQueryHandler.cs:line 20
+   at Restaurant.API.Controllers.DishesController.GetByIdForRestaurant(Int32 restaurantId, Int32 dishId) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\DishesController.cs:line 35
+   at lambda_method13(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurant.API.Middlewares.RequestTimeLoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\RequestTimeLoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurant.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\ErrorHandlingMiddleware.cs:line 11

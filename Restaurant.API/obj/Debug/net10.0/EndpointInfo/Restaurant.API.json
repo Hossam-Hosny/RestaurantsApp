@@ -112,6 +112,27 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Dishes"
+        ],
+        "parameters": [
+          {
+            "name": "restaurantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/restaurants/{restaurantId}/Dishes/{dishId}": {

@@ -6,6 +6,10 @@ public interface IDishRepository
 {
     Task<int> CreateAsync( Dish entity);
     Task<Dish?> GetByNameAsync(string name);
-    
+    Task Delete (List<Dish> dishes);
+
+
+
+
 
 }

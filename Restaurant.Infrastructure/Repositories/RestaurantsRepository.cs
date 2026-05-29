@@ -29,8 +29,15 @@ internal class RestaurantsRepository(AppDbContext _dbContext) : IRestaurantsRepo
 
     public async Task<Domain.Entities.Restaurant?> GetByIdAsync(int id)
     {
-        var restaurant = await _dbContext.Restaurants.Include(r=>r.Dishes).FirstOrDefaultAsync(r=>r.Id== id);
-        return restaurant;
+        try
+        {
+            var restaurant = await _dbContext.Restaurants.Include(r => r.Dishes).FirstOrDefaultAsync(r => r.Id == id);
+            return restaurant;
+        }catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            throw;
+        }
     }
 
     public async Task UpdateAsync(Domain.Entities.Restaurant entity)

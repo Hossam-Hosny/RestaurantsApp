@@ -57,6 +57,22 @@
   },
   {
     "ContainingType": "Restaurant.API.Controllers.DishesController",
+    "Method": "DeleteDishesForRestaurant",
+    "RelativePath": "api/restaurants/{restaurantId}/Dishes",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "restaurantId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Restaurant.API.Controllers.DishesController",
     "Method": "GetByIdForRestaurant",
     "RelativePath": "api/restaurants/{restaurantId}/Dishes/{dishId}",
     "HttpMethod": "GET",

@@ -1,0 +1,117 @@
+2026-05-29 16:48:48.386 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-29 16:48:48.494 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-29 16:48:48.511 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-29 16:48:50.939 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-29 16:48:51.408 +03:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-29 16:48:54.101 +03:00 [INF] HTTP GET / responded 404 in 36.0094 ms
+2026-05-29 16:48:59.679 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 133.3806 ms
+2026-05-29 16:48:59.730 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 2.1094 ms
+2026-05-29 16:48:59.753 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 25.1258 ms
+2026-05-29 16:48:59.753 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 25.2876 ms
+2026-05-29 16:48:59.753 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 25.0755 ms
+2026-05-29 16:48:59.795 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 66.5102 ms
+2026-05-29 16:49:01.600 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 797.2119 ms
+2026-05-29 16:49:08.036 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-29 16:49:08.140 +03:00 [INF] Getting All restaurants
+2026-05-29 16:49:08.390 +03:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]
+2026-05-29 16:49:08.531 +03:00 [INF] HTTP GET /api/Restaurants/get-all responded 200 in 527.7379 ms
+2026-05-29 16:49:27.984 +03:00 [WRN] Removing all dishes from restaurant: 112
+2026-05-29 16:49:28.152 +03:00 [INF] Executed DbCommand (26ms) [Parameters=[@id='112'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[Category], [r0].[ContactEmail], [r0].[ContactNumber], [r0].[Description], [r0].[HasDelivery], [r0].[Name], [r0].[Address_City], [r0].[Address_PostalCode], [r0].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @id
+) AS [r0]
+LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
+ORDER BY [r0].[Id]
+2026-05-29 16:49:38.098 +03:00 [ERR] HTTP DELETE /api/restaurants/112/Dishes responded 500 in 10183.9648 ms
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with id: 112 does not exist!
+   at Restaurant.Application.Dishes.Commands.DeleteDish.DeleteDishesForRestaurantCommandHandler.Handle(DeleteDishesForRestaurantCommand request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Dishes\Commands\DeleteDish\DeleteDishesForRestaurantCommandHandler.cs:line 18
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurant.API.Controllers.DishesController.DeleteDishesForRestaurant(Int32 restaurantId) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\DishesController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-05-29 16:49:38.355 +03:00 [ERR] Restaurant with id: 112 does not exist!
+Restaurant.Domain.Exceptions.NotFoundException: Restaurant with id: 112 does not exist!
+   at Restaurant.Application.Dishes.Commands.DeleteDish.DeleteDishesForRestaurantCommandHandler.Handle(DeleteDishesForRestaurantCommand request, CancellationToken cancellationToken) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Application\Dishes\Commands\DeleteDish\DeleteDishesForRestaurantCommandHandler.cs:line 18
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurant.API.Controllers.DishesController.DeleteDishesForRestaurant(Int32 restaurantId) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Controllers\DishesController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurant.API.Middlewares.RequestTimeLoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\RequestTimeLoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurant.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\Middlewares\ErrorHandlingMiddleware.cs:line 11
+2026-05-29 16:49:52.042 +03:00 [WRN] Removing all dishes from restaurant: 7
+2026-05-29 16:49:52.052 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@id='7'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[Category], [r0].[ContactEmail], [r0].[ContactNumber], [r0].[Description], [r0].[HasDelivery], [r0].[Name], [r0].[Address_City], [r0].[Address_PostalCode], [r0].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @id
+) AS [r0]
+LEFT JOIN [Dishes] AS [d] ON [r0].[Id] = [d].[RestaurantId]
+ORDER BY [r0].[Id]
+2026-05-29 16:49:52.061 +03:00 [INF] Trying to remove dishes of Restaurant; 7
+2026-05-29 16:49:52.189 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='5', @p1='6', @p2='9', @p3='10', @p4='11'], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p1;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p2;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p3;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p4;
+2026-05-29 16:49:52.215 +03:00 [INF] Removing dishes of rRestaurant: 7 successfully done
+2026-05-29 16:49:52.218 +03:00 [INF] HTTP DELETE /api/restaurants/7/Dishes responded 204 in 186.2623 ms
+2026-05-29 16:49:57.970 +03:00 [INF] Getting All restaurants
+2026-05-29 16:49:57.975 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]
+2026-05-29 16:49:57.983 +03:00 [INF] HTTP GET /api/Restaurants/get-all responded 200 in 13.6313 ms

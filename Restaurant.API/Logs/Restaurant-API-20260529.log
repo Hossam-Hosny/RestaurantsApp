@@ -349,3 +349,68 @@ UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [E
 OUTPUT 1
 WHERE [Id] = @p14 AND [ConcurrencyStamp] = @p15;
 2026-05-29 17:49:24.213 +03:00 [INF] HTTP POST /login responded 401 in 207.6945 ms
+2026-05-29 18:21:38.432 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-29 18:21:38.672 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-29 18:21:38.697 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-29 18:21:41.905 +03:00 [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-29 18:21:42.678 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-29 18:21:46.458 +03:00 [INF] HTTP GET / responded 404 in 117.1830 ms
+2026-05-29 18:23:08.974 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 103.9627 ms
+2026-05-29 18:23:09.092 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 6.3315 ms
+2026-05-29 18:23:09.159 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 72.3641 ms
+2026-05-29 18:23:09.159 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 72.4662 ms
+2026-05-29 18:23:09.159 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 72.3680 ms
+2026-05-29 18:23:09.170 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 83.8008 ms
+2026-05-29 18:23:09.580 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 285.2919 ms
+2026-05-29 18:23:37.081 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 1.0528 ms
+2026-05-29 18:23:37.128 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 0.3006 ms
+2026-05-29 18:23:37.128 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 0.3006 ms
+2026-05-29 18:23:37.128 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 0.2989 ms
+2026-05-29 18:23:37.142 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 0.1556 ms
+2026-05-29 18:23:37.157 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.4001 ms
+2026-05-29 18:23:37.652 +03:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 304 in 0.2288 ms
+2026-05-29 18:23:37.665 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 20.9400 ms
+2026-05-29 18:23:42.115 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 0.4906 ms
+2026-05-29 18:23:42.138 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 0.0853 ms
+2026-05-29 18:23:42.175 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 0.6799 ms
+2026-05-29 18:23:42.139 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 0.0480 ms
+2026-05-29 18:23:42.138 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 0.0282 ms
+2026-05-29 18:23:42.138 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 0.0897 ms
+2026-05-29 18:23:42.264 +03:00 [INF] HTTP GET /swagger/favicon-32x32.png responded 304 in 0.0723 ms
+2026-05-29 18:23:42.291 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 28.1671 ms
+2026-05-29 18:24:00.519 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-29 18:24:00.693 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-29 18:24:00.706 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-29 18:24:01.299 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-29 18:24:01.762 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-29 18:24:03.549 +03:00 [INF] HTTP GET / responded 404 in 53.4932 ms
+2026-05-29 18:24:08.188 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 96.5849 ms
+2026-05-29 18:24:08.252 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 1.3875 ms
+2026-05-29 18:24:08.292 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 40.8725 ms
+2026-05-29 18:24:08.292 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 40.8933 ms
+2026-05-29 18:24:08.292 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 41.1198 ms
+2026-05-29 18:24:08.297 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 46.7335 ms
+2026-05-29 18:24:08.729 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 230.2931 ms
+2026-05-29 18:34:43.256 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software MediatR. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-29 18:34:43.449 +03:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-05-29 18:34:43.456 +03:00 [INF] Getting All restaurants
+2026-05-29 18:34:43.974 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]
+2026-05-29 18:34:44.236 +03:00 [INF] HTTP GET /api/Restaurants/get-all responded 200 in 1023.5748 ms

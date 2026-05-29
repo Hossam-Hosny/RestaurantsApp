@@ -675,6 +675,7 @@ C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Humanizer.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\MediatR.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\MediatR.Contracts.dll
+C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
@@ -842,4 +843,3 @@ C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\obj\Debug\net10.0\Restaurant.API.pdb
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\obj\Debug\net10.0\Restaurant.API.genruntimeconfig.cache
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\obj\Debug\net10.0\ref\Restaurant.API.dll
-C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

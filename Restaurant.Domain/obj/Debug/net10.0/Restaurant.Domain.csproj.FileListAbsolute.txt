@@ -45,6 +45,7 @@ C:\Users\USER\OneDrive\Desktop\Visual Studio Folder\vsPorjects\IndividualProject
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\bin\Debug\net10.0\Restaurant.Domain.deps.json
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\bin\Debug\net10.0\Restaurant.Domain.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\bin\Debug\net10.0\Restaurant.Domain.pdb
+C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.csproj.AssemblyReference.cache
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.AssemblyInfoInputs.cache
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.AssemblyInfo.cs
@@ -54,4 +55,3 @@ C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\refint\Restaurant.Domain.dll
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.pdb
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\ref\Restaurant.Domain.dll
-C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.Domain\obj\Debug\net10.0\Restaurant.Domain.csproj.AssemblyReference.cache

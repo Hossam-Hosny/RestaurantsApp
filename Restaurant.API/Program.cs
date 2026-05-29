@@ -1,3 +1,4 @@
+using Microsoft.OpenApi;
 using Restaurant.API.Extensions;
 using Restaurant.API.Middlewares;
 using Restaurant.Application.Extensions;
@@ -13,7 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
 
 
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -41,7 +42,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapIdentityApi<User>();
+app.MapGroup("api/identity").MapIdentityApi<User>();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -842,3 +842,4 @@ C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\obj\Debug\net10.0\Restaurant.API.pdb
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\obj\Debug\net10.0\Restaurant.API.genruntimeconfig.cache
 C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\obj\Debug\net10.0\ref\Restaurant.API.dll
+C:\Users\USER\OneDrive\Desktop\VisualStudioFolder\vsPorjects\IndividualProjects\RestaurantProject\Restaurant.API\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

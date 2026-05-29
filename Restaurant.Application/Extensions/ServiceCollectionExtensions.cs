@@ -14,7 +14,7 @@ public static class ServiceCollectionExtensions
        services.AddMediatR(cfg=>cfg.RegisterServicesFromAssembly(appAssemblley));
 
         // registering AutoMapper
-        services.AddAutoMapper(appAssemblley);
+        services.AddAutoMapper(cfg => { },appAssemblley);
 
         // registering Fluent validation
         services.AddValidatorsFromAssembly(appAssemblley)

@@ -2,7 +2,7 @@
 
 namespace Restaurant.Application.Dishes.Commands.CreateDish;
 
-public class CreateDishCommand() :IRequest
+public class CreateDishCommand() :IRequest<int>
 {
     public int RestaurantId { get; set; }
     public string Name { get; set; } = default!;

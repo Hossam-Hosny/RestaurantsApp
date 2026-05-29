@@ -1,6 +1,7 @@
 using Restaurant.API.Extensions;
 using Restaurant.API.Middlewares;
 using Restaurant.Application.Extensions;
+using Restaurant.Domain.Entities;
 using Restaurant.Infrastructure.Extensions;
 using Restaurant.Infrastructure.Seeders;
 using Serilog;
@@ -35,11 +36,12 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-
 }
+
 
 app.UseHttpsRedirection();
 
+app.MapIdentityApi<User>();
 app.UseAuthorization();
 
 app.MapControllers();

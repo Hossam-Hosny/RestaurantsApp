@@ -1,11 +1,40 @@
 @Restaurant.API_HostAddress = https://localhost:7279
+@userToken=
+@ownerToken=
+@adminToken=
 
 GET {{Restaurant.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+POST {{Restaurant.API_HostAddress}}/api/identity/login
+Content-Type: application/json
 
+{
+  "email":"admin@test.com",
+  "password":"P@ssword1"
+}
+
+###
 GET {{Restaurant.API_HostAddress}}/api/restaurants
 
 ###
 
+
+POST {{Restaurant.API_HostAddress}}/api/restaurants/create
+Content-Type: application/json
+
+{
+  //CreateRestaurantCommand
+}
+
+###
+
+@id=0
+DELETE {{Restaurant.API_HostAddress}}/api/restaurants/delete-restaurant/{{id}}
+
+###
+
+GET {{Restaurant.API_HostAddress}}/api/restaurants/get-all
+
+###

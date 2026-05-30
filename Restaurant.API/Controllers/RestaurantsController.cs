@@ -7,6 +7,7 @@ using Restaurant.Application.Restaurants.Commands.UpdateRestaurant;
 using Restaurant.Application.Restaurants.Dtos;
 using Restaurant.Application.Restaurants.Queries.GetAllRestaurants;
 using Restaurant.Application.Restaurants.Queries.GetRestaurantById;
+using Restaurant.Domain.Constants;
 
 namespace Restaurant.API.Controllers
 {
@@ -43,6 +44,7 @@ namespace Restaurant.API.Controllers
 
 
         [HttpPost("create")]
+        [Authorize(Roles =UserRoles.Owner)]
         public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command)
         {
             int id = await _mediator.Send(command);

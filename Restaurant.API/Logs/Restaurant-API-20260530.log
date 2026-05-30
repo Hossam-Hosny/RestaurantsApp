@@ -81,3 +81,119 @@ END
 2026-05-30 18:05:45.751 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 98.2998 ms
 2026-05-30 18:05:45.761 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 107.9404 ms
 2026-05-30 18:05:46.210 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 304.2583 ms
+2026-05-30 18:26:41.780 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-30 18:26:41.959 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-30 18:26:41.980 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-30 18:26:42.631 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-30 18:26:43.281 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-30 18:26:43.322 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-30 18:26:43.698 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@p0='15cac52e-0ba9-4f50-8e29-5d3604bbabf8' (Nullable = false) (Size = 450), @p1='451da99f-2887-4368-a911-ccc08b9abfa2' (Size = 4000), @p2='User' (Size = 256), @p3=NULL (Size = 256), @p4='c95358c2-bff3-4440-8c77-ea078c9c0457' (Nullable = false) (Size = 450), @p5='d20273be-9bfd-4096-be5c-d07024de4ad7' (Size = 4000), @p6='Owner' (Size = 256), @p7=NULL (Size = 256), @p8='dea8c480-5549-4c21-b36d-4d172a62c201' (Nullable = false) (Size = 450), @p9='b8f8f139-1ed4-4879-8477-ef4f9033e3ec' (Size = 4000), @p10='Admin' (Size = 256), @p11=NULL (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetRoles] ([Id], [ConcurrencyStamp], [Name], [NormalizedName])
+VALUES (@p0, @p1, @p2, @p3),
+(@p4, @p5, @p6, @p7),
+(@p8, @p9, @p10, @p11);
+2026-05-30 18:26:46.167 +03:00 [INF] HTTP GET / responded 404 in 151.2942 ms
+2026-05-30 18:26:53.584 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 128.9297 ms
+2026-05-30 18:26:53.656 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 7.3450 ms
+2026-05-30 18:26:53.673 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 24.9321 ms
+2026-05-30 18:26:53.673 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 24.9322 ms
+2026-05-30 18:26:53.673 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 25.0576 ms
+2026-05-30 18:26:53.680 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 31.5647 ms
+2026-05-30 18:26:54.103 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 296.4104 ms
+2026-05-30 18:27:15.922 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@normalizedUserName='ADMIN@TEST.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nationality], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-30 18:27:16.093 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='e8f2377e-3911-4355-9773-56dcb767d03c' (Nullable = false) (Size = 450), @p1='0', @p2='5e405ae8-9a39-4e7d-a7b2-d5332db4fdad' (Size = 4000), @p3=NULL (DbType = Date), @p4='admin@test.com' (Size = 256), @p5='False', @p6='True', @p7=NULL (DbType = DateTimeOffset), @p8=NULL (Size = 4000), @p9='ADMIN@TEST.COM' (Size = 256), @p10='ADMIN@TEST.COM' (Size = 256), @p11='AQAAAAIAAYagAAAAECqzx4fV94Cv/M3qDfAVklpWVfb2KdfkZ+/J3fMuJahwHtXAbS7Gtb89YEzDVlz2NQ==' (Size = 4000), @p12=NULL (Size = 4000), @p13='False', @p14='5THSXQV3LZRVKWOVKGA2IMFDHK5ZGPIJ' (Size = 4000), @p15='False', @p16='admin@test.com' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [DateOfBirth], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Nationality], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-05-30 18:27:16.133 +03:00 [INF] HTTP POST /api/identity/register responded 200 in 673.0743 ms
+2026-05-30 18:27:38.627 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@normalizedUserName='OWNER@TEST.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nationality], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-30 18:27:38.640 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='e8d2347c-e08c-495b-96d1-fdcc5eee4644' (Nullable = false) (Size = 450), @p1='0', @p2='1cc38f5b-40a3-4562-bb7d-75ca499bdd48' (Size = 4000), @p3=NULL (DbType = Date), @p4='owner@test.com' (Size = 256), @p5='False', @p6='True', @p7=NULL (DbType = DateTimeOffset), @p8=NULL (Size = 4000), @p9='OWNER@TEST.COM' (Size = 256), @p10='OWNER@TEST.COM' (Size = 256), @p11='AQAAAAIAAYagAAAAEIXIwjz9k7toPYzDryPotpfqS+kcZl+PYDBwEymn/ZMv+CKYG084C+XCLgHuItiiZA==' (Size = 4000), @p12=NULL (Size = 4000), @p13='False', @p14='TL7Y25EQKV2SOLWMV3V2YTTLA4CQR2N4' (Size = 4000), @p15='False', @p16='owner@test.com' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [DateOfBirth], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Nationality], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-05-30 18:27:38.647 +03:00 [INF] HTTP POST /api/identity/register responded 200 in 329.2305 ms
+2026-05-30 18:27:47.678 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@normalizedUserName='USER@TEST.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nationality], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-30 18:27:47.686 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='766c53bc-cc57-4213-9a55-b09fbcf4c0e0' (Nullable = false) (Size = 450), @p1='0', @p2='f7d7b215-2242-49ed-abb9-822dda79c961' (Size = 4000), @p3=NULL (DbType = Date), @p4='user@test.com' (Size = 256), @p5='False', @p6='True', @p7=NULL (DbType = DateTimeOffset), @p8=NULL (Size = 4000), @p9='USER@TEST.COM' (Size = 256), @p10='USER@TEST.COM' (Size = 256), @p11='AQAAAAIAAYagAAAAEC+54TpKVQZkv4cIm0hdlRPXSOx33a8rHqqu89SJiPzFiaFKnVDHe5CaEq2qBiCg7w==' (Size = 4000), @p12=NULL (Size = 4000), @p13='False', @p14='ZDHJIKRFKGIWEM5HHUJGJALTDKKGHZ7B' (Size = 4000), @p15='False', @p16='user@test.com' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [DateOfBirth], [Email], [EmailConfirmed], [LockoutEnabled], [LockoutEnd], [Nationality], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+2026-05-30 18:27:47.692 +03:00 [INF] HTTP POST /api/identity/register responded 200 in 134.7526 ms
+2026-05-30 18:41:00.747 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-30 18:41:00.874 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-30 18:41:00.896 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-30 18:41:01.385 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-30 18:41:01.863 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-30 18:41:01.893 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-30 18:41:03.763 +03:00 [INF] HTTP GET / responded 404 in 75.4056 ms
+2026-05-30 18:41:11.310 +03:00 [INF] HTTP GET /swagger/index.html responded 304 in 98.3410 ms
+2026-05-30 18:41:11.412 +03:00 [INF] HTTP GET /swagger/index.js responded 304 in 9.2152 ms
+2026-05-30 18:41:11.434 +03:00 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 304 in 31.1104 ms
+2026-05-30 18:41:11.447 +03:00 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 304 in 44.7118 ms
+2026-05-30 18:41:11.436 +03:00 [INF] HTTP GET /swagger/index.css responded 304 in 32.7369 ms
+2026-05-30 18:41:11.434 +03:00 [INF] HTTP GET /swagger/swagger-ui.css responded 304 in 31.2229 ms
+2026-05-30 18:41:11.763 +03:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 185.3988 ms
+2026-05-30 18:41:20.063 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@normalizedUserName='STRING' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nationality], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @normalizedUserName
+2026-05-30 18:41:20.104 +03:00 [INF] HTTP POST /api/identity/login responded 401 in 316.4036 ms
+2026-05-30 18:50:39.447 +03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2026-05-30 18:50:39.541 +03:00 [WRN] The entity type 'Address' is an optional dependent using table sharing without any required non shared column that could be used to identify whether the entity exists. If all nullable properties contain a 'null' value in database then an object instance won't be created in the query. Add a required property to create instances with 'null' values for other properties or mark the incoming navigation as required to always create an instance.
+2026-05-30 18:50:39.553 +03:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Dish'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-05-30 18:50:39.951 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-05-30 18:50:40.367 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-30 18:50:40.385 +03:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-05-30 18:50:41.802 +03:00 [INF] HTTP GET / responded 404 in 53.5225 ms

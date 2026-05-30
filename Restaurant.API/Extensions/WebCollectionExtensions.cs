@@ -8,6 +8,8 @@ public static class WebCollectionExtensions
 {
     public static void AddPresentaion (this WebApplicationBuilder builder)
     {
+        builder.Services.AddAuthentication();
+
         builder.Host.UseSerilog((context, configuration) =>
     configuration.ReadFrom.Configuration(context.Configuration));
 

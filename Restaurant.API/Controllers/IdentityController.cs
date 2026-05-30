@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Restaurant.Application.Users.Commands;
+using Restaurant.Application.Users.Commands.AssignUserRole;
+using Restaurant.Application.Users.Commands.UpdateUserDetails;
+using Restaurant.Domain.Constants;
 
 namespace Restaurant.API.Controllers
 {
@@ -16,5 +18,22 @@ namespace Restaurant.API.Controllers
             await mediator.Send(command);
             return NoContent();
         }
+
+        
+        [HttpPost("userRole")]
+        [Authorize(Roles =UserRoles.Admin)]
+        public async Task<IActionResult> AssignUserToRole (AssignUserRoleCommand command)
+        {
+            await mediator.Send(command);
+            return NoContent();
+        }
+
+
+
+
+
+
+
+
     }
 }

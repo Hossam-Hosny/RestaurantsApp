@@ -15,7 +15,7 @@ public static class WebCollectionExtensions
 
         builder.Services.AddScoped<ErrorHandlingMiddleware>();
         builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
-
+      
 
 
         builder.Services.AddSwaggerGen(c =>

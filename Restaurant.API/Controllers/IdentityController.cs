@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restaurant.Application.Users.Commands.AssignUserRole;
+using Restaurant.Application.Users.Commands.UnAssignUserRole;
 using Restaurant.Application.Users.Commands.UpdateUserDetails;
 using Restaurant.Domain.Constants;
 
@@ -29,6 +30,13 @@ namespace Restaurant.API.Controllers
         }
 
 
+        [HttpDelete("un-assign-user-role")]
+        [Authorize(Roles =UserRoles.Admin)]
+        public async Task<IActionResult> UnAssignUserRole(UnAssignUserRoleCommand command)
+        {
+            await mediator.Send(command);
+            return NoContent();
+        }
 
 
 
